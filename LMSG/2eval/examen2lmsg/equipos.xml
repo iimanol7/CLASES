@@ -1,0 +1,41 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<?xml-model href="equipos.xsd"?>
+<?xml-stylesheet type="text/xsl" href="equipos.xsl"?>
+<equipos>
+    <equipo>
+        <codigo>E01</codigo>
+        <nombre>Equipo 01</nombre>
+        <creacion>2021</creacion>
+        <plantilla>11</plantilla>
+        <presupuesto>1000.0</presupuesto>
+        <ganados>4</ganados>
+        <perdidos>1</perdidos>
+    </equipo>
+    <equipo>
+        <codigo>E02</codigo>
+        <nombre>Equipo 02</nombre>
+        <creacion>2022</creacion>
+        <plantilla>12</plantilla>
+        <presupuesto>2000.0</presupuesto>
+        <ganados>2</ganados>
+        <perdidos>3</perdidos>
+    </equipo>
+    <equipo>
+        <codigo>E03</codigo>
+        <nombre>Equipo 03</nombre>
+        <creacion>2023</creacion>
+        <plantilla>13</plantilla>
+        <presupuesto>3000.0</presupuesto>
+        <ganados>2</ganados>
+        <perdidos>2</perdidos>
+    </equipo>
+    <equipo>
+        <codigo>E04</codigo>
+        <nombre>Equipo 04</nombre>
+        <creacion>2024</creacion>
+        <plantilla>14</plantilla>
+        <presupuesto>4000.0</presupuesto>
+        <ganados>3</ganados>
+        <perdidos>1</perdidos>
+    </equipo>
+</equipos>

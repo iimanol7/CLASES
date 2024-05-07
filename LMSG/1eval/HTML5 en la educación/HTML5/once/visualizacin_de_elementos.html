@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Created using eXe: http://exelearning.org -->
+<head>
+<style type="text/css">
+@import url(../css/base.css);
+@import url(../css/content.css);
+@import url(../css/nav.css);</style>
+<title> Visualización de elementos | Maquetación con estilos </title>
+<meta http-equiv="Content-Type" content="text/html;  charset=utf-8" />
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body>
+<div id="content">
+<div id="header"><h1>HTML 5 en la educación</h1>
+        <div class="volver"><a href="../indice.htm">Volver al índice</a></div>
+<div id="nodeDecoration"><h1 id="nodeTitle">Visualización de elementos</h1></div>
+      </div>
+<div id="siteNav">
+<ul>
+<li><a href="index.html" class="daddy main-node">Maquetación con estilos</a><ul>
+<li><a href="recurso_tic_maquetacin_con_estilos.html" class="daddy">Recurso TIC: Maquetación con estilos</a><ul>
+<li><a href="el_modelo_de_caja.html" class="no-ch">El modelo de caja</a></li>
+<li><a href="sombras.html" class="no-ch">Sombras</a></li>
+<li><a href="anchura_y_altura_de_una_caja.html" class="no-ch">Anchura y altura de una caja</a></li>
+<li id="active"><a href="visualizacin_de_elementos.html" class="active no-ch">Visualización de elementos</a></li>
+<li><a href="elementos_flotantes.html" class="no-ch">Elementos flotantes</a></li>
+<li><a href="posicionamiento.html" class="no-ch">Posicionamiento</a></li>
+<li><a href="transformaciones_y_prefijos.html" class="no-ch">Transformaciones y prefijos</a></li>
+<li><a href="aplicar_estilos_con_un_editor_web.html" class="no-ch">Aplicar estilos con un editor web</a></li>
+<li><a href="resumen.html" class="no-ch">Resumen</a></li>
+<li><a href="actividades_y_ejemplos.html" class="no-ch">Actividades y ejemplos</a></li>
+</ul>
+</li>
+<li><a href="aplicacin_al_aula.html" class="daddy">Aplicación al aula</a><ul class="other-section">
+<li><a href="planificacin.html" class="no-ch">Planificación</a></li>
+<li><a href="sugerencias_metodolgicas.html" class="no-ch">Sugerencias metodológicas</a></li>
+<li><a href="atencin_a_la_diversidad.html" class="no-ch">Atención a la diversidad</a></li>
+</ul></li></ul></li></ul>
+</div>
+<div id="main">
+<div class="FreeTextIdevice" id="id130">
+<div class="iDevice emphasis0">
+<div id="ta130_1" class="block" style="display:block;position:relative">Hasta el momento todos nuestros elementos se han mostrado de forma
+similar, con un comportamiento secuencial. Veremos algunos cambios
+que se pueden aplicar al mostrar nuestros contenidos. 
+<p>
+Para hacer nuestra pruebas emplearemos esta sencilla página web:
+</p>
+<blockquote>
+	<p>
+	&lt;!DOCTYPE html&gt;<br />
+	&lt;html&gt;<br />
+	&lt;head&gt;<br />
+	&lt;meta http-equiv=&quot;content-type&quot;
+	content=&quot;text/html; charset=UTF-8&quot;&gt;<br />
+	&lt;title&gt;floating&lt;/title&gt;<br />
+	&lt;link href=&quot;floating.css&quot; rel=&quot;stylesheet&quot;
+	type=&quot;text/css&quot;&gt;<br />
+	&lt;/head&gt;
+	</p>
+	<p>
+	&lt;body&gt;<br />
+	&lt;div id=&quot;bloque1&quot;&gt;Bloque 1&lt;/div&gt;<br />
+	&lt;div id=&quot;bloque2&quot;&gt;Bloque 2&lt;/div&gt;<br />
+	&lt;div id=&quot;bloque3&quot;&gt;Bloque 3&lt;/div&gt;<br />
+	&lt;div id=&quot;bloque4&quot;&gt;Bloque 4&lt;/div&gt;<br />
+	&lt;/body&gt;
+	</p>
+	<p>
+	&lt;/html&gt;
+	</p>
+</blockquote>
+<p>
+Consta de cuatro simples bloques con una pequeña frase. Al
+aplicarle los estilos siguientes conseguimos el resultado de la
+figura.
+</p>
+<blockquote>
+	body {<br />
+	<blockquote>
+		background-image: url(&quot;resources/fondo.png&quot;);<br />
+		font-family: Arial, Helvetica, sans-serif;<br />
+		}<br />
+	</blockquote>
+	div {<br />
+	<blockquote>
+		width:
+		120px;<br />
+		height: 80px;<br />
+		background-color: rgb(82, 108, 142);<br />
+		color: rgb(245, 255, 244);<br />
+		margin: 10px;<br />
+		border-radius:5px;
+		<br />
+		text-align: center;<br />
+		}<br />
+	</blockquote>
+</blockquote>
+<p>
+<img src="fig1315.jpg" height="450" width="600" />
+</p>
+<p>
+En CSS disponemos de la propiedad <b>display</b>
+para modificar la visualización de los elementos de la página.
+</p>
+<p>
+Por ejemplo, al añadir a los valores de <b>&lt;div&gt;</b>
+la propiedad <b>display:block,</b> forzaremos a que antes y después del
+elemento seleccionado se produzca un salto de línea. Es decir,
+exactamente igual que se encuentra ahora, ya que los elementos
+delimitados por <b>&lt;div&gt;</b> siempre llevan ese salto de línea antes y
+después.
+</p>
+<p>
+Para apreciar el efecto de <b>display, </b>podemos
+aplicar la siguiente línea:
+</p>
+<blockquote>
+	<p>
+	div {
+	</p>
+	<blockquote>
+		display:inline;<br />
+		}
+	</blockquote>
+</blockquote>
+<p>
+El resultado sería el siguiente:
+</p>
+<p>
+<img src="fig1316.jpg" height="189" width="600" />
+</p>
+<p>
+Los elementos se sitúan horizontalmente,
+sin los saltos de línea. Se pierden sus dimensiones, como se puede
+observar. En cambio, usando <b>inline-block</b> se distribuyen
+horizontalmente con sus características de bloque intactas.
+</p>
+<blockquote>
+	<p>
+	div{
+	</p>
+	<blockquote>
+		display:inline-block;<br />
+		}
+	</blockquote>
+</blockquote>
+<p>
+<img src="fig1317.jpg" height="189" width="600" />
+</p>
+</div></div>
+</div>
+<div class="preknowledgeIdevice" id="id146">
+<div class="iDevice emphasis1">
+<img alt="Icono IDevice"      class="iDevice_icon" src="icon_preknowledge.gif"/>
+<h2 class="iDeviceTitle">Nota</h2>
+<div class="iDevice_inner">
+<div id="ta146_34_2" class="block" style="display:block;position:relative">
+<p>
+Todas estas opciones son muy
+apropiadas para diseñar menús dentro de nuestras páginas.
+</p>
+</div><br/>
+</div>
+</div>
+</div>
+<div class="FreeTextIdevice" id="id147">
+<div class="iDevice emphasis0">
+<div id="ta147_1" class="block" style="display:block;position:relative">
+<h2>Elementos no mostrados</h2>
+<p>
+Otro valor interesante es <b>none</b>.
+Observemos lo que sucede al aplicar este valor al segundo bloque:
+</p>
+<blockquote>
+	<p>
+	div#bloque2 { display:none;}
+	</p>
+</blockquote>
+<p>
+Como se observa en la figura, el bloque 2 ha
+desaparecido: 
+</p>
+<p>
+<img src="fig1318.jpg" height="171" width="600" />
+</p>
+<p>
+¿Qué utilidad tiene esto? Con <i>JavaScript</i>,
+el lenguaje de <i>script</i> que podemos emplear en los navegadores resulta
+sencillo modificar durante la reproducción de la página una
+propiedad concreta de una hoja de estilos.
+</p>
+<p>
+Podemos probar a añadir el código de un
+pequeño <i>script</i> a la cabecera de la página:
+</p>
+<blockquote>
+	<p>
+	&lt;!DOCTYPE html&gt;<br />
+	&lt;html&gt;<br />
+	&lt;head&gt;<br />
+	&lt;meta http-equiv=&quot;content-type&quot;
+	content=&quot;text/html; charset=UTF-8&quot;&gt;<br />
+	&lt;title&gt;floating&lt;/title&gt;<br />
+	&lt;link href=&quot;floating.css&quot;
+	rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;<br />
+	&lt;script language=&quot;JavaScript&quot;&gt;
+	</p>
+	<blockquote>
+		function mostrar() {<br />
+		document.getElementById('bloque2').style.display=&quot;inline-block&quot;;<br />
+		}<br />
+	</blockquote>
+	&lt;/script&gt;<br />
+	<p>
+	&lt;/head&gt;
+	</p>
+	<p>
+	&lt;body&gt;<br />
+	&lt;div id=&quot;bloque1&quot;
+	onmouseover=&quot;mostrar()&quot;&gt;Bloque 1&lt;/div&gt;<br />
+	&lt;div id=&quot;bloque2&quot;&gt;Bloque
+	2&lt;/div&gt;<br />
+	&lt;div id=&quot;bloque3&quot;&gt;Bloque
+	3&lt;/div&gt;<br />
+	&lt;div id=&quot;bloque4&quot;&gt;Bloque
+	4&lt;/div&gt;<br />
+	&lt;/body&gt;<br />
+	<br />
+	&lt;/html&gt;
+	</p>
+</blockquote>
+<p>
+Además hemos modificado el bloque 1
+añadiendo un parámetro denominado<b> onmouseover</b>. Lo que sucede en
+adelante es que el <b>&lt;div&gt;</b> <i>bloque1</i> será sensible al momento en el que el
+ratón pase sobre él. El resultado es que, cuando eso suceda, se
+ejecutará una pequeña acción denominada mostrar. Esa acción lo
+único que hace es localizar el bloque 2
+(<b>document.getElementById('bloque2')</b>) y modificar su propiedad <b>display</b>
+(<b>style.display=&quot;inline-block&quot;;</b>).
+</p>
+<p>
+Probaremos la página para ver si funciona.
+La figura siguiente incluye un ejemplo un poco más sofisticado que
+muestra el bloque y a su vez lo oculta, cuando el ratón deja de estar
+sobre el bloque 1 (se hace mediante el parámetro <b>onmouseout</b>).
+</p>
+<p>
+<img src="fig1319.jpg" height="171" width="600" />
+</p>
+<p>
+<img src="fig1320.jpg" height="171" width="600" />
+</p>
+<p>
+Si es la primera vez que utilizamos
+<i>JavaScript, </i>nos parecerá mágico por un lado, pero complejo por otro.
+Es normal. Debemos prestar muchísima atención a cada carácter que
+introducimos. Cualquier despiste hace que el ejemplo deje de
+funcionar completamente.
+</p>
+</div></div>
+</div>
+<div class="activityIdevice" id="id148">
+<div class="iDevice emphasis1">
+<img alt="Icono IDevice"      class="iDevice_icon" src="icon_activity.gif"/>
+<h2 class="iDeviceTitle">Actividad 8</h2>
+<div class="iDevice_inner">
+<div id="ta148_36_2" class="block" style="display:block;position:relative">
+<p>
+El primer ejemplo es
+una buena práctica para familiarizarnos con estas técnicas y, aún
+más, probar a hacer el que muestra y oculta el bloque. Como ayuda, éste sería el código <i>JavaScript </i>completo de este último caso:
+</p>
+<blockquote>
+	<p>
+	&lt;script language=&quot;JavaScript&quot;&gt;
+	</p>
+	<blockquote>
+		function mostrar() {<br />
+		document.getElementById('bloque2').style.display=&quot;inline-block&quot;;<br />
+		}<br />
+		function ocultar() {<br />
+		document.getElementById('bloque2').style.display=&quot;none&quot;;<br />
+		}<br />
+	</blockquote>
+	<p>
+	&lt;/script&gt;
+	</p>
+</blockquote>
+</div><br/>
+</div>
+</div>
+</div>
+<div class="FreeTextIdevice" id="id149">
+<div class="iDevice emphasis0">
+<div id="ta149_1" class="block" style="display:block;position:relative">
+  <p>Para terminar con la visualización, además
+    de <b>block</b>, <b>inline</b>, <b>inline-block </b>y <b>none</b>, contamos con otras opciones
+    específicas relacionadas con tablas (<b>table</b>, <b>table-cell</b>, etc.), para
+    mostrarlos como elementos de lista (<b>list-item</b>) y alguna opción más,
+    aunque las primeras que hemos visto son las más empleadas.
+</p>
+  <h2>Visibilidad</h2>
+<p>
+  El ejemplo que retiraba de la vista un
+  elemento queda más completo al conocer la propiedad <b>visibility</b>. Esta propiedad se emplea para ocultar o mostrar un elemento HTML,
+  con la particularidad de que el espacio que ocuparía el objeto se
+  mantiene en la pantalla, aunque éste esté oculto. Esa es la
+  principal diferencia con <b>display:none</b>, que hace que el hueco
+  del objeto se cubra con el resto de los elementos de la página.
+</p>
+<p>
+Así, el siguiente código:
+</p>
+<blockquote>
+	<p>
+	div#bloque2 { visibility:hidden;}
+	</p>
+</blockquote>
+<p>
+se vería así, dejando el hueco.
+</p>
+<p>
+<img src="fig1321.jpg" height="171" width="600" />
+</p>
+<p>
+Los valores que puede tomar la propiedad
+<b>visibility </b>son <b>hidden </b>(oculto), <b>visible </b>(se muestra el elemento) o
+<b>collapse </b>(se aplica a las tablas; en este caso no se dejará el
+hueco).
+</p>
+</div></div>
+</div>
+<div class="MultichoiceIdevice" id="id178">
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="libot_drag.js"></script>
+<div class="iDevice emphasis1">
+<img alt="Icono de IDevice de pregunta"      class="iDevice_icon" src="icon_question.gif" />
+<h2 class="iDeviceTitle">Pregunta de Elección Múltiple</h2>
+<div class="iDevice_inner">
+<div class="question">
+<div id="taquestion178_2" class="block" style="display:block;position:relative">Si dentro de nuestra web queremos saltar un contenido, pero queremos que quede su hueco, ¿qué código debemos teclear?
+</div> &nbsp;&nbsp;
+<table>
+<tbody>
+<tr><td><input type="radio" name="option178_2" id="i178_5" onclick="getFeedback(0,3,'178_2','multi')"/></td><td>
+<div id="taans178_5" class="block" style="display:block;position:relative"><i>div{display:inline-block}.
+</i>
+</div></td></tr>
+<tr><td><input type="radio" name="option178_2" id="i178_423" onclick="getFeedback(1,3,'178_2','multi')"/></td><td>
+<div id="taans178_423" class="block" style="display:block;position:relative"><i> div#contenido { display:none;}.</i>
+</div></td></tr>
+<tr><td><input type="radio" name="option178_2" id="i178_426" onclick="getFeedback(2,3,'178_2','multi')"/></td><td>
+<div id="taans178_426" class="block" style="display:block;position:relative"><i>div#contenido { visibility:hidden;}.</i>
+</div></td></tr>
+</tbody>
+</table>
+<div id="sa0b178_2" style="color: rgb(0, 51, 204);display: none;" even_steven="7">Incorrecto</div>
+<div id="sa1b178_2" style="color: rgb(0, 51, 204);display: none;" even_steven="7">Incorrecto</div>
+<div id="sa2b178_2" style="color: rgb(0, 51, 204);display: none;" even_steven="8">Correcto</div>
+</div>
+<br/></div>
+</div>
+</div>
+<div class="activityIdevice" id="id151">
+<div class="iDevice emphasis1">
+<img alt="Icono IDevice"      class="iDevice_icon" src="icon_activity.gif"/>
+<h2 class="iDeviceTitle">Actividad 9</h2>
+<div class="iDevice_inner">
+<div id="ta151_39_2" class="block" style="display:block;position:relative">
+<p>
+En una página web
+escribiremos esta secuencia:
+</p>
+<blockquote>
+	<p>
+	&lt;p&gt; No es lo mismo pero es &lt;span
+	id=&quot;palabra&quot;&gt;bastante&lt;/span&gt; parecido&lt;/p&gt;
+	</p>
+</blockquote>
+<p>
+Utilizando la propiedad <b>display </b>y <b>visiblity </b>haremos desaparecer la
+palabra situada en la etiqueta <b>&lt;span&gt;</b>. Debemos apreciar la diferencia
+entre ambos métodos.
+</p>
+</div><br/>
+</div>
+</div>
+</div>
+<div class="noprt" align="right"><a href="anchura_y_altura_de_una_caja.html">&laquo; Anterior</a> | <a href="elementos_flotantes.html"> Siguiente &raquo;</a></div>
+<div id="siteFooter"><div id="ite-footer">
+  <p align="center">Este contenido est&aacute; licenciado bajo <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/" target="_blank">Creative Commons Reconocimiento-No Comercial-Compartir Igual 3.0</a></p>
+  <p align="center"><a href="http://www.educacion.es/" target="_blank">Ministerio de Educaci&oacute;n, Cultura y Deporte</a> | <a href="http://www.ite.educacion.es/" target="_blank">Instituto de Tecnolog&iacute;as Educativas</a></p></div></div></div>
+</div>
+</body></html>

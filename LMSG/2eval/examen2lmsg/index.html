@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imagenes/iconolmsg.ico" type="image/x-icon">
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            //función para cargar contenido con AJAX
+            function cargarContenido(url, estilo, nuevoTitulo) {
+                var extension = url.split('.').pop().toLowerCase();
+                if (nuevoTitulo) {
+                    document.title = nuevoTitulo+" - Imanol Gullon"; // Si se proporciona un nuevo título, actualizarlo
+                }
+                $.ajax({
+                    url: url,
+                    method: 'GET',
+                    dataType: extension === 'xml' ? 'xml' : 'html',
+                    success: function(data) {
+                        if (extension === 'xml' && estilo) {
+                            $.ajax({
+                                url: estilo,
+                                method: 'GET',
+                                dataType: 'xml',
+                                success: function(xslData) {
+                                    var xsltProcessor = new XSLTProcessor();
+                                    xsltProcessor.importStylesheet(xslData);
+                                    var resultDocument = xsltProcessor.transformToFragment(data, document);
+                                    $('#contenido').empty().append(resultDocument);
+                                },
+                                error: function() {
+                                    $('#contenido').html('Error al cargar el estilo XSLT');
+                                }
+                            });
+                        } else {
+                            $('#contenido').html(data);
+                        }
+                    },
+                    error: function() {
+                        $('#contenido').html('Error al cargar el contenido');
+                    }
+                });
+            }
+            //Manejar click en elementos del menú
+            $('nav li').on('click', function(){
+                //sacamos la url
+                var url = $(this).data('url');
+                //sacamos la ruta del xsl
+                var estilo = $(this).data('estilo');
+                //sacamos el nombre del titulo
+                var nuevoTitulo = $(this).text();
+                //llamamos a la funcion con los datos
+                cargarContenido(url, estilo, nuevoTitulo );
+            });
+
+            //cargar contenido predefinido
+            cargarContenido($('nav li:first').data('url'));
+
+        });
+       
+        
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-header">
+            <img src="imagenes/logolmsg.png" alt="" width="80px">
+        </div>
+        <nav>
+                <ul>
+                    <li data-url="inicio.html"><a href="#">Inicio</a></li>
+                    <li data-url="tablas.html"><a href="#">Tablas</a></li>
+                    <li data-url="listas.html"><a href="#">Listas</a></li>
+                    <li data-url="equipos.xml" data-estilo="equipos.xsl"><a href="#">XML</a></li>
+                </ul>
+        </nav>
+    </header>
+
+    <main class="contenido-inicio" id="contenido">
+
+    </main>
+
+    <footer>
+        Examen realizado por Imanol Gullon
+    </footer>
+</body>
+
+</html>

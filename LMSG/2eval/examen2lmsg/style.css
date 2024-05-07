@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+main{
+    min-height: 70vh;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    gap: 400px;
+    background-color: olive;
+    height: 10%;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    padding: 10px;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a:hover{
+    background-color: #fff;
+    color: olive;
+}
+.contenido-inicio{
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    padding: 20px;
+    margin: 10px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer{
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    background-color: olive;
+    color: white;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.contenido-multimedia{
+    display: flex;
+    margin: 10px 0;
+}
+.audio{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    height: 80px;
+}
+.video{
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    height: 380px;
+}
+
+.contenido-tablas{
+    margin: 10px 0;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lista{
+    background-color: gray;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    padding: 10px;
+    color: red;
+    height: 300px;
+}
+.lista ul{
+    list-style: "@";
+}
+.tabla{
+    background-color: skyblue;
+    color: brown;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    padding: 10px;
+    height: 300px;
+}
+
+.tabla table{
+    border: dotted 5px brown;
+}
+
+.tabla th{
+    background-color: green;
+    color: white;
+}
+.filaimpar{
+    background-color: #fff;
+    color: red;
+}
+
+.filapar{
+    background: red;
+    color: white;
+}
+.ultima{
+    text-align: center;
+    background-color: green;
+}
+.container-equipos img {
+    width: 300px;
+    object-fit: cover;
+}
+
+
+
+.xml table{
+    width: 100%;
+}
+
+.xml table th{
+    background-color: orange;
+}
+@media screen and (max-width:850px) {
+    header{
+        gap: 200px;
+    }
+    .xml{
+        overflow: auto;
+        font-size: small;
+    }
+}
+@media screen and (max-width:630px) {
+    header{
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+       justify-content:center;
+       align-items: center;
+       font-size: small;
+    }
+    .xml{
+        overflow: auto;
+        font-size: small;
+    }
+    footer{
+        font-size: small;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .tabla{
+        overflow: auto;
+    }
+}

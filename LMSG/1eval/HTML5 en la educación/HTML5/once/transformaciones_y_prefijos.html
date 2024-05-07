@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Created using eXe: http://exelearning.org -->
+<head>
+<style type="text/css">
+@import url(../css/base.css);
+@import url(../css/content.css);
+@import url(../css/nav.css);</style>
+<title> Transformaciones y prefijos | Maquetación con estilos </title>
+<meta http-equiv="Content-Type" content="text/html;  charset=utf-8" />
+<script type="text/javascript" src="common.js"></script>
+</head>
+<body>
+<div id="content">
+<div id="header"><h1>HTML 5 en la educación</h1>
+        <div class="volver"><a href="../indice.htm">Volver al índice</a></div>
+<div id="nodeDecoration"><h1 id="nodeTitle">Transformaciones y prefijos</h1></div>
+      </div>
+<div id="siteNav">
+<ul>
+<li><a href="index.html" class="daddy main-node">Maquetación con estilos</a><ul>
+<li><a href="recurso_tic_maquetacin_con_estilos.html" class="daddy">Recurso TIC: Maquetación con estilos</a><ul>
+<li><a href="el_modelo_de_caja.html" class="no-ch">El modelo de caja</a></li>
+<li><a href="sombras.html" class="no-ch">Sombras</a></li>
+<li><a href="anchura_y_altura_de_una_caja.html" class="no-ch">Anchura y altura de una caja</a></li>
+<li><a href="visualizacin_de_elementos.html" class="no-ch">Visualización de elementos</a></li>
+<li><a href="elementos_flotantes.html" class="no-ch">Elementos flotantes</a></li>
+<li><a href="posicionamiento.html" class="no-ch">Posicionamiento</a></li>
+<li id="active"><a href="transformaciones_y_prefijos.html" class="active no-ch">Transformaciones y prefijos</a></li>
+<li><a href="aplicar_estilos_con_un_editor_web.html" class="no-ch">Aplicar estilos con un editor web</a></li>
+<li><a href="resumen.html" class="no-ch">Resumen</a></li>
+<li><a href="actividades_y_ejemplos.html" class="no-ch">Actividades y ejemplos</a></li>
+</ul>
+</li>
+<li><a href="aplicacin_al_aula.html" class="daddy">Aplicación al aula</a><ul class="other-section">
+<li><a href="planificacin.html" class="no-ch">Planificación</a></li>
+<li><a href="sugerencias_metodolgicas.html" class="no-ch">Sugerencias metodológicas</a></li>
+<li><a href="atencin_a_la_diversidad.html" class="no-ch">Atención a la diversidad</a></li>
+</ul></li></ul></li></ul>
+</div>
+<div id="main">
+<div class="FreeTextIdevice" id="id159">
+<div class="iDevice emphasis0">
+<div id="ta159_1" class="block" style="display:block;position:relative">Entre las opciones que encontramos en las
+hojas de estilo modernas se encuentra la propiedad <b>transform </b>que se
+emplea para aplicar transformaciones a un elemento. Éstas son las
+opciones disponibles:
+<ul>
+	<li><b>translate</b>, <b>translate3d</b>, <b>translateX</b>,
+	<b>	translateY </b>y <b>translateZ</b>: definen diferentes tipos de traslaciones
+	sobre el objeto indicado.
+	</li>
+	<li><b>scale</b>, <b>scale3d</b>, <b>scaleY</b>, <b>scaleY </b>y
+	<b>	scaleZ</b>: redimensionan el objeto, en su conjunto, en ejes
+	parciales.
+	</li>
+	<li><b>rotate</b>, <b>rotate3d</b>, <b>rotateX</b>, <b>rotateY</b>,
+	<b>	rotateZ</b>: aplican una rotación al objeto, como en los casos
+	anteriores; se rota en su conjunto o sólo en un plano específico.
+	Van seguidas de un ángulo.
+	</li>
+	<li><b>skew</b>, <b>skewX </b>y <b>skewY</b>: realizan un
+	abatimiento del elemento.
+	</li>
+	<li><b>perspective</b>: modifica su perspectiva.
+	</li>
+	<li><b>matrix </b>y <b>matrix3d</b>: definen una
+	transformación utilizando 6 valores o 16 en el segundo caso.
+	</li>
+</ul>
+<p>
+Para no alargar demasiado este apartado
+mostraremos sólo un par de ejemplos. La primera figura muestra el
+resultado obtenido mediante el uso de<i> traslate</i>:
+</p>
+<p>
+<img src="fig1328.jpg" height="462" width="600" />
+</p>
+<p>
+Éste es el código que tendríamos que
+incorporar para conseguirlo:
+</p>
+<blockquote>
+	<p>
+	div#bloque1 { -webkit-transform:none;}<br />
+	div#bloque2 {
+	-webkit-transform:translate(10px);}<br />
+	div#bloque3 {
+	-webkit-transform:translate(50px,50px);}<br />
+	div#bloque4 {
+	-webkit-transform:translate3d(50px,50px,40px);}<br />
+	div#bloque5 { -webkit-transform:none;}<br />
+	div#bloque6 { -webkit-transform:none;}
+	</p>
+</blockquote>
+<h2>Los prefijos</h2>
+<p>
+Las transformaciones nos sirven para
+explicar un pequeño inconveniente del uso de propiedades modernas.
+En algunos casos, las propiedades más actuales no funcionan en todos
+los navegadores y en otros, cada navegador ha realizado su propia
+implementación de la propiedad, a la espera de que el grupo que
+define las hojas de estilo CSS3 complete del todo la definición de
+propiedades. 
+</p>
+<p>
+¿Cómo se diferencian, pues, las
+implementaciones que hace cada navegador? Añadiendo un prefijo
+específico diferente en cada caso. Así la propiedad <b>transform </b>es un
+caso prototípico. En la actualidad el panorama es el siguiente:
+</p>
+<p>
+Tenemos la propiedad real, llamada
+<b>transform</b>, que no funciona aún en ningún navegador.
+</p>
+<ul>
+	<li><i>Internet Explorer</i> puede realizar todas
+	las transformaciones 2D, pero para ello usaremos su propia versión
+	llamada <b>-ms-transform</b>.
+	</li>
+	<li><i>Firefox </i>también hace lo mismo, pero
+	con su versión llamada <b>-moz-transform</b>.
+	</li>
+	<li><i>Opera </i>funciona como los dos anteriores,
+	pero con una versión llamada<b> -o-transform</b>.
+	</li>
+	<li><i>Chrome </i>y <i>Safari</i>, que emplean el mismo
+	motor de presentación de páginas, además de las 2D hacen las
+	transformaciones 3D ya, pero con su propiedad <b>-webkit-transform</b>.
+	</li>
+</ul>
+<p>
+En este punto sólo podemos estar
+agradecidos porque sólo haya cinco navegadores web populares:
+imaginemos un mundo con 50 de ellos...
+</p>
+<p>
+Todo esto nos lleva a que, si quisiéramos
+aplicar una rotación de 30 grados a un elemento y quisiéramos que
+funcionase en cualquier navegador, deberíamos añadir una propiedad
+similar a ésta:
+</p>
+<blockquote>
+	<p>
+	div#bloque5 {
+	</p>
+	<blockquote>
+		-ms-transform:rotate(30deg);<br />
+		-moz-transform:rotate(30deg);<br />
+		-o-transform:rotate(30deg);<br />
+		-webkit-transform:rotate(30deg);<br />
+		}
+	</blockquote>
+</blockquote>
+<p>
+Y éste sería el resultado, ahora sí, en
+cualquier navegador:
+</p>
+<p>
+<img src="fig1329.jpg" height="462" width="600" />
+</p>
+</div></div>
+</div>
+<div class="preknowledgeIdevice" id="id160">
+<div class="iDevice emphasis1">
+<img alt="Icono IDevice"      class="iDevice_icon" src="icon_preknowledge.gif"/>
+<h2 class="iDeviceTitle">Nota</h2>
+<div class="iDevice_inner">
+<div id="ta160_48_2" class="block" style="display:block;position:relative"><p>
+Este es un problema a
+extinguir. Con cada nueva versión de los navegadores, desaparecen
+este tipo de prefijos y se tiende más a acoger los estándares
+definidos por CSS3.
+</p>
+</div><br/>
+</div>
+</div>
+</div>
+<div class="FreeTextIdevice" id="id161">
+<div class="iDevice emphasis0">
+<div id="ta161_1" class="block" style="display:block;position:relative">
+<p>
+En gran medida aplicaremos estilos mediante
+un editor web, por lo que esta complejidad añadida no será una
+tarea nuestra, sino del editor.
+</p>
+<h2>Transiciones</h2>
+<p>
+Las transiciones permiten definir la velocidad y el momento en que se aplica una variación en una propiedad.
+</p>
+<p>
+Al igual que con las transformaciones, las
+transiciones no están implementadas en ningún navegador sin
+utilizar los prefijos anteriores. Si lo hacemos, contaremos con la
+propiedad <b>transition-property</b>, que va seguida de alguna transición y
+de la propiedad<b> transition-duration</b>, seguida de un valor en segundos.
+Opcionalmente podemos añadir <b>transition-delay</b> para hacer una pausa,
+antes de que comience la transición.
+</p>
+<p>
+El resultado es una animación que se
+desarrolla a lo largo del tiempo. Para ver cómo funciona probaremos
+a añadir lo siguiente a algún elemento de nuestra página web:
+</p>
+<blockquote>
+	<p>
+	div#bloque1:hover {
+	</p>
+	<blockquote>
+		width:500px ;<br />
+		-webkit-transition-property: width;<br />
+		-webkit-transition-duration: 10s;<br />
+		-webkit-transition-delay: 1s;<br />
+		} 
+	</blockquote>
+</blockquote>
+<p>
+Al aplicarlo en <i>Chrome</i>, veremos cómo el
+elemento en cuestión va incrementando su anchura durante 10
+segundos, pero sólo cuando haya pasado 1 segundo desde que se
+cargó la página. Para que esto tenga lugar, necesitaremos cambiar la propiedad de algún modo. Por eso definimos el estilo como: <b>hover</b> (cuando el ratón pase sobre el elemento), aunque también podríamos realizar la operación al pulsar un botón externo, usando eventos, etc. 
+</p>
+<p>
+La clave de su funcionamiento está en que va a transformar la anchura (<b>transition-property: width</b>) del elemento bloque1 para ampliar hasta los 500 píxeles pero, en lugar de hacerlo brúscamente, lo hará progresivamente durante 10 segundos (<b>transition-duration</b>).
+</p>
+<p>
+Podemos indicar tantas propiedades como necesitemos y cambiaremos sólo aquellas que queramos mediante <b>transition-property</b> seguido de las propiedades, o todas juntas si indicamos <b>transition-property:all</b>. 
+</p>
+<p>
+Observa el vídeo para ver cómo funcionan las transiciones.
+</p>
+</div></div>
+</div>
+<div class="preknowledgeIdevice" id="id164">
+<div class="iDevice emphasis1">
+<img alt="Icono IDevice"      class="iDevice_icon" src="icon_preknowledge.gif"/>
+<h2 class="iDeviceTitle">Vídeo</h2>
+<div class="iDevice_inner">
+<div id="ta164_21_2" class="block" style="display:block;position:relative"><a href="transition.swf" target="_blank">Cómo realizar una transición</a>
+</div><br/>
+</div>
+</div>
+</div>
+<div class="FreeTextIdevice" id="id165">
+<div class="iDevice emphasis0">
+<div id="ta165_1" class="block" style="display:block;position:relative">Con esta técnica podemos añadir interactividad a cualquier elemento de una página web, cambiando colores progresivamente, mostrando sombras poco a poco, etc.
+</div></div>
+</div>
+<div class="TrueFalseIdevice" id="id181">
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="libot_drag.js"></script>
+<div class="iDevice emphasis1">
+<img alt="" class="iDevice_icon" src="icon_question.gif" />
+<h2 class="iDeviceTitle">Pregunta Verdadero-Falso</h2>
+<div class="iDevice_inner">
+<div id="ta181_16" class="block" style="display:block;position:relative">La siguiente afirmación, ¿es verdadera o falsa?
+</div><div class="question">
+<br/><br/><div id="taquestion0b181" class="block" style="display:block;position:relative">
+<p>
+Imagina que queremos realizar el abatimiento de un elemento y para que se pueda visualizar en diferentes navegadores escribimos el siguiente código:
+</p>
+<p>
+div#elemento {<br />
+<br />
+-ms-transform:skew(30deg);<br />
+-moz-transform:skew(30deg);<br />
+-o-transform:skew(30deg);<br />
+-webkit-transform:skew(30deg);<br />
+} <br />
+</p>
+<p>&nbsp;
+
+</p>
+</div><br/>Verdadero <input type="radio" name="option0b181" id="true0b181" onclick="getFeedback(0,2,'0b181','truefalse')"/> 
+Falso <input type="radio" name="option0b181" id="false0b181" onclick="getFeedback(1,2,'0b181','truefalse')"/>
+<div id="s0b0b181" style="color: rgb(0, 51, 204);display: none;" even_steven="186">¡Correcto! </div>
+<div id="s1b0b181" style="color: rgb(0, 51, 204);display: none;" even_steven="187">¡Incorrecto! </div>
+<div id="sfbk0b181" style="color: rgb(0, 51, 204);display: none;"><div id="tafeedback0b181" class="block" style="display:block;position:relative">
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="activityIdevice" id="id166">
+<div class="iDevice emphasis1">
+<img alt="Icono IDevice"      class="iDevice_icon" src="icon_activity.gif"/>
+<h2 class="iDeviceTitle">Actividad 11</h2>
+<div class="iDevice_inner">
+<div id="ta166_23_2" class="block" style="display:block;position:relative">
+<p>
+Empleando transiciones diseñaremos una sombra casi imperceptible que se destaca fuertemente, al pasar el ratón sobre el elemento al que se lo apliquemos, por ejemplo un <b>&lt;div&gt;</b> o un <b>&lt;h1&gt;</b>. Todo lo que necesitamos hacer es crear una sombra casi transparente y definir una propiedad<b> :hover</b> para ese elemento en el que la sombra es casi opaca, añadiendo, ademá,s las propiedades<b> transition</b> necesarias para que se produzca paulatinamente.
+</p>
+<p>
+Es decir, los dos estilos que definiríamos podrían quedar así:
+</p>
+<p>
+div#bloque1 {
+</p>
+<blockquote>
+	<p>
+	box-shadow: 8px 8px 6px #333333;<br />
+	}
+	</p>
+</blockquote>
+<p>
+div#bloque1:hover {
+</p>
+<blockquote>
+	box-shadow: 8px 8px 6px #333333;<br />
+	-webkit-transition-property: box-shadow;<br />
+	-webkit-transition-duration: 5s;<br />
+	-webkit-transition-delay: 1s;<br />
+	}  
+</blockquote>
+<p>
+Probaremos también a variar el número de segundos hasta encontrar un equilibrio entre estética y usabilidad. El efecto no debe ser pesado ni entorpecer el trabajo del usuario, pero al mismo tiempo debe percibirse.
+</p>
+</div><br/>
+</div>
+</div>
+</div>
+<div class="FreeTextIdevice" id="id167">
+<div class="iDevice emphasis0">
+<div id="ta167_1" class="block" style="display:block;position:relative">
+<h2>Animaciones</h2>
+<p>
+Las transiciones se pueden llevar un paso más allá empleando animaciones. El concepto es similar, pero utilizando fotogramas clave que definimos a través de una especie de función dentro de la hoja de estilos. 
+</p>
+<p>
+Estas líneas definirían esa función, en la que podemos definir tantos estados como necesitemos. En el ejemplos estamos indicando que, cuando la animación esté al 50%, la anchura del cuadro debe haber crecido hasta los 500 píxeles, manteniendo su altura. En el 100%, además de esos 500 píxeles, la altura variará hasta los 300 píxeles y cambiará su color.
+</p>
+<blockquote>
+	<p>
+	@-webkit-keyframes mianimacion{
+	</p>
+	<blockquote>
+		0% {    }<br />
+		50% {width:500px; height:60px; }<br />
+		100% {  width:500px; height:300px; background-color:#222266; }<br />
+		}<br />
+	</blockquote>
+</blockquote>
+<p>
+Ahora, para que esa función se ejecute, la invocaremos desde la propiedad habitual, utilizando varias propiedades del tipo <b>animation-</b>.  
+</p>
+<blockquote>
+	<p>
+	div#bloque1:hover {
+	</p>
+	<blockquote>
+		-webkit-animation-name: &quot;mianimacion&quot;;<br />
+		-webkit-animation-duration: 5s;<br />
+		-webkit-animation-interaction-count: infinite;<br />
+		-webkit-animation-timing-function: ease-in-out;<br />
+		} 
+	</blockquote>
+</blockquote>
+<p>
+La primera línea llama a la función, la segunda define su duración, la tercera indica cuántas veces se repetirá (podemos usar <b>infinite </b>para repeticiones infinitas) y la última línea indica cómo se realizará la transición (rápido al principio y lento al final, uniforme, etc).
+</p>
+<p>
+Podemos emplear algunas características más, pero las fundamentales son <b>name</b>, <b>duration </b>e <b>interaction-count</b>.
+</p>
+<p>
+Observe en el vídeo siguiente la diferencia de funcionamiento de esta animación. Es más completa y permite muchas más posibilidades. 
+</p>
+</div></div>
+</div>
+<div class="preknowledgeIdevice" id="id170">
+<div class="iDevice emphasis1">
+<img alt="Icono IDevice"      class="iDevice_icon" src="icon_preknowledge.gif"/>
+<h2 class="iDeviceTitle">Vídeo</h2>
+<div class="iDevice_inner">
+<div id="ta170_27_2" class="block" style="display:block;position:relative"><a href="animation.swf" target="_blank">Animación mediante CSS3</a>
+</div><br/>
+</div>
+</div>
+</div>
+<div class="preknowledgeIdevice" id="id171">
+<div class="iDevice emphasis1">
+<img alt="Icono IDevice"      class="iDevice_icon" src="icon_preknowledge.gif"/>
+<h2 class="iDeviceTitle">Nota</h2>
+<div class="iDevice_inner">
+<div id="ta171_28_2" class="block" style="display:block;position:relative">En todos los ejemplos de esta página hemos definido transiciones y animaciones exclusivamente empleando el prefijo <b>-webkit</b>, por lo que sólo funcionarán en navegadores tipo <i>Chrome, Chromium</i>, etc. Para que funcione en <i>Internet Explorer</i> o <i>Firefox</i> debemos recrear el mismo código con los prefijos necesarios.
+</div><br/>
+</div>
+</div>
+</div>
+<div class="noprt" align="right"><a href="posicionamiento.html">&laquo; Anterior</a> | <a href="aplicar_estilos_con_un_editor_web.html"> Siguiente &raquo;</a></div>
+<div id="siteFooter"><div id="ite-footer">
+  <p align="center">Este contenido est&aacute; licenciado bajo <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/es/" target="_blank">Creative Commons Reconocimiento-No Comercial-Compartir Igual 3.0</a></p>
+  <p align="center"><a href="http://www.educacion.es/" target="_blank">Ministerio de Educaci&oacute;n, Cultura y Deporte</a> | <a href="http://www.ite.educacion.es/" target="_blank">Instituto de Tecnolog&iacute;as Educativas</a></p></div></div></div>
+</div>
+</body></html>

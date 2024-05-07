@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="equipos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="equipo" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="equipo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="codigo" type="xs:string"/>
+        <xs:element name="nombre" type="xs:string"/>
+        <xs:element name="creacion" type="xs:integer"/>
+        <xs:element name="plantilla" type="xs:integer"/>
+        <xs:element name="presupuesto" type="xs:double"/>
+        <xs:element name="ganados" type="xs:integer"/>
+        <xs:element name="perdidos" type="xs:integer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

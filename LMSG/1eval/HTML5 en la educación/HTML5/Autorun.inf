@@ -1,0 +1,4 @@
+[autorun]
+open=abrir.exe index.htm
+icon=favicon.ico
+label=HTML 5 en la educación

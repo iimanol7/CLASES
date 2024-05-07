@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+main{
+    min-height: 70vh;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    gap: 400px;
+    background-color: navy;
+    height: 10%;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    padding: 10px;
+}
+nav a{
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    list-style: none;
+}
+nav ul li a:hover{
+    background-color: #fff;
+    color: navy;
+}
+.contenido-inicio{
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    padding: 20px;
+    margin: 10px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+footer{
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    background-color: green;
+    color: gray;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.contenido-multimedia{
+    display: flex;
+    margin: 10px 0;
+}
+.audio{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    height: 80px;
+}
+.video{
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    height: 380px;
+}
+
+.contenido-tablas{
+    margin: 10px 0;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lista{
+    background-color: gray;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    padding: 10px;
+    color: red;
+    height: 300px;
+}
+.lista ul{
+    list-style: "@";
+}
+.tabla{
+    background-color: skyblue;
+    color: brown;
+    border-radius: 10px;
+    box-shadow: 0 0 6px gray;
+    padding: 10px;
+    height: 300px;
+}
+
+.tabla table{
+    border: dotted 5px brown;
+}
+
+.tabla th{
+    background-color: green;
+    color: white;
+}
+.impar{
+    background-color: #fff;
+    color: red;
+}
+
+.par{
+    background: red;
+    color: white;
+}
+.ultima{
+    text-align: center;
+    background-color: green;
+}
