@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: LightSalmon;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    border: 1px solid #ccc;
+    /* Bordes sólidos de 1 píxel con color gris (#ccc) */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 20px;
+    /* Añade espacio interno para que el contenido no esté pegado al borde */
+    margin: 10px 0;
+    /* Añade márgenes para separar los elementos <article> entre sí */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra con desplazamiento en Y de 4 píxeles y desenfoque de 8 píxeles */
+}
+
+section {
+    height: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1%;
+    background-color: LightSalmon;
+    color: white;
+    display: flex;
+    height: 1%;
+    border: 1px solid #ccc;
+    /* Bordes sólidos de 1 píxel con color gris (#ccc) */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 20px;
+    /* Añade espacio interno para que el contenido no esté pegado al borde */
+    margin: 10px 0;
+    /* Añade márgenes para separar los elementos <article> entre sí */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra con desplazamiento en Y de 4 píxeles y desenfoque de 8 píxeles */
+}
+
+.logo img {
+    width: 20%;
+    /* Ajusta el tamaño del logo según tus necesidades */
+}
+
+nav {
+    width: 90%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 1%;
+}
+
+nav ul li a {
+    color: white;
+    background-color: LightSalmon;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: LightSalmon;
+    background-color: white;
+    text-decoration: none;
+}
+
+.inicio {
+    border: 1px solid #ccc;
+    /* Bordes sólidos de 1 píxel con color gris (#ccc) */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 20px;
+    /* Añade espacio interno para que el contenido no esté pegado al borde */
+    margin: 10px 0;
+    /* Añade márgenes para separar los elementos <article> entre sí */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra con desplazamiento en Y de 4 píxeles y desenfoque de 8 píxeles */
+}
+
+.tabla {
+    background-color: aqua;
+    color: brown;
+    border: 1px solid #ccc;
+    /* Bordes sólidos de 1 píxel con color gris (#ccc) */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    padding: 20px;
+    /* Añade espacio interno para que el contenido no esté pegado al borde */
+    margin: 10px 0;
+    /* Añade márgenes para separar los elementos <article> entre sí */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra con desplazamiento en Y de 4 píxeles y desenfoque de 8 píxeles */
+}
+
+.tabla table {
+    border: 5px dotted;
+}
+
+.tabla table thead {
+    color: white;
+    background-color: green;
+}
+
+.filaimpar {
+    color: red;
+    background-color: white;
+}
+
+.filapar {
+    color: white;
+    background-color: red;
+}
+
+.tabla table tfoot {
+    color: white;
+    background-color: green;
+}

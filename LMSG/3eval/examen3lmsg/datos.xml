@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<datos><temporada>
+        <codigo>2024</codigo>
+        <equipos>
+            <equipo>
+                <escudo>e01.png</escudo>
+                <nombreequipo>Equipo 01</nombreequipo>
+                <codigoequipo>e01</codigoequipo>
+                <fundacion>2001</fundacion>
+                <presupuesto>11000</presupuesto>
+                <jugadores>
+                    <jugador>
+                        <codigojugador>j01</codigojugador>
+                        <nombrejugador>Jugador 01</nombrejugador>
+                        <edad>21</edad>
+                        <sueldo>1000.0</sueldo>
+                        <foto>j01.png</foto>
+                    </jugador>
+                    <jugador>
+                        <codigojugador>j02</codigojugador>
+                        <nombrejugador>Jugador 02</nombrejugador>
+                        <edad>22</edad>
+                        <sueldo>2000.0</sueldo>
+                        <foto>j02.png</foto>
+                    </jugador>
+                </jugadores>
+            </equipo>
+            <equipo>
+                <escudo>e02.png</escudo>
+                <nombreequipo>Equipo 02</nombreequipo>
+                <codigoequipo>e02</codigoequipo>
+                <fundacion>2002</fundacion>
+                <presupuesto>12000</presupuesto>
+                <jugadores>
+                    <jugador>
+                        <codigojugador>j03</codigojugador>
+                        <nombrejugador>Jugador 03</nombrejugador>
+                        <edad>23</edad>
+                        <sueldo>3000.0</sueldo>
+                        <foto>j03.png</foto>
+                    </jugador>
+                    <jugador>
+                        <codigojugador>j04</codigojugador>
+                        <nombrejugador>Jugador 04</nombrejugador>
+                        <edad>24</edad>
+                        <sueldo>4000.0</sueldo>
+                        <foto>j04.png</foto>
+                    </jugador>
+                </jugadores>
+            </equipo>
+            <equipo>
+                <escudo>e03.png</escudo>
+                <nombreequipo>Equipo 03</nombreequipo>
+                <codigoequipo>e03</codigoequipo>
+                <fundacion>2003</fundacion>
+                <presupuesto>13000</presupuesto>
+                <jugadores>
+                    <jugador>
+                        <codigojugador>j05</codigojugador>
+                        <nombrejugador>Jugador 05</nombrejugador>
+                        <edad>25</edad>
+                        <sueldo>5000.0</sueldo>
+                        <foto>j05.png</foto>
+                    </jugador>
+                    <jugador>
+                        <codigojugador>j06</codigojugador>
+                        <nombrejugador>Jugador 06</nombrejugador>
+                        <edad>26</edad>
+                        <sueldo>6000.0</sueldo>
+                        <foto>j06.png</foto>
+                    </jugador>
+                </jugadores>
+            </equipo>
+            <equipo>
+                <escudo>e04.png</escudo>
+                <nombreequipo>Equipo 04</nombreequipo>
+                <codigoequipo>e04</codigoequipo>
+                <fundacion>2004</fundacion>
+                <presupuesto>14000</presupuesto>
+                <jugadores>
+                    <jugador>
+                        <codigojugador>j07</codigojugador>
+                        <nombrejugador>Jugador 07</nombrejugador>
+                        <edad>27</edad>
+                        <sueldo>7000.0</sueldo>
+                        <foto>j07.png</foto>
+                    </jugador>
+                    <jugador>
+                        <codigojugador>j08</codigojugador>
+                        <nombrejugador>Jugador 08</nombrejugador>
+                        <edad>28</edad>
+                        <sueldo>8000.0</sueldo>
+                        <foto>j08.png</foto>
+                    </jugador>
+                </jugadores>
+            </equipo>
+        </equipos>
+    </temporada></datos>
